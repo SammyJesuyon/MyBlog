@@ -1,0 +1,3 @@
+[submodule "MyBlog"]
+	path = MyBlog
+	url = https://github.com/SammyJesuyon/Django-Blog-API.git
