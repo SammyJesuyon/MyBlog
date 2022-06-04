@@ -1,45 +1,65 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.scss';
+import '../../../default.scss';
+import axios from "axios";
+import {BLOG_URL} from "../../utils/urls";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; //to use this icon, npm i --save @fortawesome/free-solid-svg-icons
+                                                                    //npm i --save @fortawesome/free-regular-svg-icons
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import MainLayout from "../../layouts/mainlayout";
+import BlogCard from "../../common/blogCard";
+import BlogCardExtra from "../../common/blogCardExtra";
+
 
 const Home = (props) => {
+    const [fetching, setFetching] = useState(true)
+    const [blogList, setBlogList] = useState([])
+
+    useEffect( () => {
+        getBlogContent();
+    }, [])
+
+    const getBlogContent = () => {
+        {/*The then() method returns a Promise. It takes up to two arguments:
+        callback functions for the success and failure cases of the Promise.*/}
+        axios.get(BLOG_URL).then(res => {
+            setBlogList(res.data); //after the data has been fetched
+            setFetching(false); //setFetch stops getting data
+            // console.log(res.data)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
     return (
         <div className="blog-container">
-            <div className="navbar">
-                <div className="brand">SamsBlog</div>
-                <div className="navRight">
-
-                    <div className="navLinks">
-                        <a href="#">Facebook</a>
-                    </div>
-
-                    <div className="navLinks">
-                        <a href="#">Twitter</a>
-                    </div>
-
-                    <div className="navLinks">
-                        <a href="#">LinkedIn</a>
-                    </div>
-
-                    <div className="navLinks">
-                        <a href="#">Log in</a>
-                    </div>
-
-                </div>
-            </div>
+            <MainLayout />
             <div className="banner">
-                <h2>Welcome to SamsBlog!</h2>
+                <h2>Welcome to AnimeBlog!</h2>
                 <p>Here you will find all the latest news from every genre.</p>
+
                 <div className="searchBlog">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"/>
                     <input placeholder="Search blog contents"/>
                 </div>
             </div>
             <div className="blogListContainer">
-                <div className="blogList">
-                    <BlogCard />
-                    <BlogCard />
-                    <BlogCard />
-                    <BlogCard />
-                </div>
+                {fetching ? (
+                        <div className='blogList'>
+                            <Skeleton className='blogCard' height={250}/>
+                            <Skeleton className='blogCard' height={250}/>
+                            <Skeleton className='blogCard' height={250}/>
+                            <Skeleton className='blogCard' height={250}/>
+                        </div>
+                    ) : (
+                        <div className="blogList">
+                            {blogList.map((item, id) => (
+                               <BlogCard id={id} data={item} key={id}/>
+                            ))}
+                        </div>
+                    )}
+
                 <div className="blogExtras">
                         <h4>Top Blogs</h4>
                         <BlogCardExtra />
@@ -51,37 +71,5 @@ const Home = (props) => {
         </div>
     );
 };
-
-const BlogCard = (props) => {
-    return (
-        <div className="blogCard">
-            <div className="blogImage" />
-            <div className="blogContent">
-                <div className="blogTitle">Blog Title</div>
-                <p>This is some part of the blog content...</p>
-                <button>Continue Reading</button>
-                <div className="footer">
-                    <div className="author">Created by Samson, On 16-05-2022</div>
-                </div>
-            </div>
-        </div>
-    )  
-}
-
-const BlogCardExtra = (props) => {
-    return (
-        <div className="blogCardExtra">
-            <div className="blogImage">
-                <div className="blogContent">
-                    <div className="blogTitle">Blog Title</div>
-                    <button>Read Blog</button>
-                    <div className="footer">
-                        Created by Samson Kitigo, on 16-05-2022
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
 
 export default Home;
