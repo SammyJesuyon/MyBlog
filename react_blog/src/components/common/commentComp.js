@@ -21,10 +21,11 @@ const CommentComp = (props) => {
         setLoading(true);
         axios.post(BLOG_COMMENT_URL, commentData).then(
             (res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 setLoading(false);
                 alert('comment sent');
-                setCommentData({blog_id: props.id})
+                window.location.reload();
+                setCommentData({blog_id: props.id});
                 dispatch({ type: commentTriggerAction, payload: true });
             },
             (err) => {
