@@ -1,7 +1,141 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
 
 html, body{
+  background-image: url("https://cdn.wallpapersafari.com/67/56/ZwsXT0.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
+}
+
+.blogListContainer {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  justify-content: space-between;
+  .blogList {
+    width: 60%;
+    .blogCard {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      height: 250px;
+      margin-top: 5%;
+      padding: 0;
+      background-color: #eeeeee;
+      border-radius: 7px;
+      box-shadow: 3px 5px grey;
+      overflow: hidden;
+
+      .blogImage{
+        flex: 1;
+        max-width: 40%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: whitesmoke;
+      }
+
+      .blogContent {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 60%;
+        border-radius: 5px;
+        padding: 2%;
+      }
+
+      .blogTitle {
+        color: red;
+        font-weight: bolder;
+        font-size: 20px;
+        font-family: 'Lobster Two', cursive;
+        margin-top: 2%;
+      }
+
+      button {
+        width: 25%;
+        height: 25px;
+        color: white;
+        background-color: #4c3bd6;
+        border-radius: 5px;
+        border-style: none;
+        font-family: 'Nunito', sans-serif;
+        font-size: 12px;
+      }
+      button:hover{
+        cursor: pointer;
+        width: 30%;
+        background-color: white;
+        color: #4c3bd6;
+        border: 1px solid #4c3bd6;
+      }
+
+      .footer {
+        margin-top: 5px;
+        .textCapitalized{
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .blogExtras {
+    width: 35%;
+    h4 {
+      margin-left: 20%;
+      margin-top: 20%;
+    }
+    .blogCardExtra {
+      display: flex;
+      height: 150px;
+      margin-top: 4%;
+      padding: 0;
+      background-color: #eeeeee;
+      border-radius: 5px;
+      box-shadow: 5px 5px grey;
+
+      .blogContent {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 60%;
+        height: 150px;
+        border-radius: 5px;
+        padding: 3%;
+      }
+
+      .blogTitle {
+        color: red;
+        font-weight: bolder;
+        font-size: 18px;
+        font-family: 'Lobster Two', cursive;
+      }
+
+      button {
+        width: 50%;
+        height: 20px;
+        margin-top: 10%;
+        color: white;
+        background-color: #4c3bd6;
+        border-radius: 3px;
+        border-style: none;
+        font-family: 'Nunito', sans-serif;
+        font-size: 15px;
+      }
+      button:hover{
+        cursor: pointer;
+        width: 52%;
+        color: #4c3bd6;
+        background-color: white;
+        border: 1px solid #4c3bd6;
+      }
+
+      .footer {
+        margin-top: 20%;
+        font-size: 11px;
+      }
+    }
+  }
 }

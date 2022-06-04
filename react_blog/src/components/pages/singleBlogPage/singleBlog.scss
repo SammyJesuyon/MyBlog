@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
+
+*{
+  font-family: 'Nunito', sans-serif;
+}
+
+.text-capitalize{
+  text-transform: capitalize;
+}
+
+.singleBlog{
+  .cover-main{
+    width: 80%;
+    height: 450px;
+    margin: 2% auto;
+    background-color: whitesmoke;
+    background-size: cover;
+  }
+  .blogPage {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+
+    .blogListContainer {
+      display: flex;
+      flex-direction: column;
+      margin-right: 3%;
+      background-color: #eeeeee;
+      padding: 2%;
+      border-radius: 6px;
+      box-shadow: 3px 5px grey;
+
+      .comment-card{
+        border: 0.1px solid darkgray;
+        margin-top: 2%;
+        padding: 2%;
+        .footer{
+          font-size: 12px;
+        }
+      }
+      .comment-comp{
+        display: flex;
+        flex-direction: column;
+        input{
+          border-radius: 6px;
+          border: 1px solid #4c3bd6;
+          width: 40%;
+          height: 35px;
+        }
+        textarea{
+          border-radius: 6px;
+          border: 1px solid #4c3bd6;
+        }
+        button{
+          background-color: #4c3bd6;
+          border: 1px solid #4c3bd6;
+          color: white;
+          width: 19%;
+          border-radius: 3px;
+        }
+        button:hover{
+          cursor: pointer;
+          background-color: white;
+          color: #4c3bd6;
+        }
+      }
+      h2, h3{
+        font-family: 'Lobster Two', cursive;
+      }
+      .author{
+        font-size: 13px;
+      }
+    }
+
+    .blogExtras {
+      width: 35%;
+
+      h4 {
+        margin-left: 20%;
+        margin-top: 20%;
+      }
+
+      .blogCardExtra {
+        display: flex;
+        height: 150px;
+        margin-top: 4%;
+        padding: 0;
+        background-color: #eeeeee;
+        border-radius: 5px;
+        box-shadow: 5px 5px grey;
+
+        .blogContent {
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          width: 60%;
+          height: 150px;
+          border-radius: 5px;
+          padding: 3%;
+        }
+
+        .blogTitle {
+          color: red;
+          font-weight: bolder;
+          font-size: 18px;
+          font-family: 'Lobster Two', cursive;
+        }
+
+        button {
+          width: 60%;
+          height: 20px;
+          margin-top: 10%;
+          color: white;
+          background-color: #4c3bd6;
+          border-radius: 3px;
+          border-style: none;
+          font-family: 'Nunito', sans-serif;
+          font-size: 15px;
+        }
+
+        button:hover {
+          cursor: pointer;
+          color: #4c3bd6;
+          background-color: white;
+          border: 1px solid #4c3bd6;
+        }
+
+        .footer {
+          margin-top: 20%;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
