@@ -1,0 +1,84 @@
+@import "../../utils/theme";
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+.navbar{
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  opacity: 0.88;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #4c3bd6;
+
+  .brand{
+    text-decoration: none !important;
+    font-family: 'Cookie', cursive;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 2%;
+    color: black;
+  }
+
+  .navRight{
+    display: flex;
+    align-items: center;
+
+    .modal:hover{
+      cursor: pointer;
+    }
+
+    .navLinks{
+      margin: 0 20px;
+      a{
+        font-size: 14px;
+        font-weight: bolder;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.search-icon{
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 10px;
+  color: black;
+}
+
+.banner{
+  height: 150px;
+  width: 100%;
+  background-color: #4c3bd6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h2{
+    margin: 0;
+    color: white;
+    font-family: 'Lobster Two', cursive;
+    font-size: 28px;
+  }
+
+  p{
+    margin: 10px 0;
+    color: rgba(white, 0.5);
+  }
+
+  .searchBlog > input{
+      min-width: 600px;
+      height: 30px;
+      display: block;
+      margin: 0 auto;
+      padding: 0 20px 0 35px;
+      border: aqua;
+      border-radius: 6px;
+      font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+  }
+}
+
